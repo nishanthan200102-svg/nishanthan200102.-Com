@@ -20,19 +20,18 @@ html {
 }
 
 :root {
-   
-:root {
-  --navy: #2a122e;
-  --blue: #16122e;
+  --navy: #16122e;
+  --purple: #2a122e;
+  --green: #394f47;
   --sky: #c9d8ce;
-  --pale: #394f47;
+  --pale: #f0edf2;
   --white: #ffffff;
   --text: #2a122e;
 }
 
 body {
   font-family: Arial, sans-serif;
-  background: #f4f8fc;
+  background: #f5f3f6;
   color: var(--text);
   line-height: 1.7;
 }
@@ -41,7 +40,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--navy);
+  background: var(--green);
   color: white;
   padding: 14px 5%;
   display: flex;
@@ -49,7 +48,7 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
-  box-shadow: 0 3px 14px #071b3530;
+  box-shadow: 0 3px 14px #16122e30;
 }
 
 .logo {
@@ -81,7 +80,12 @@ nav a:hover {
 .hero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(125deg, #071b35, #10568a, #087fcb);
+  background: linear-gradient(
+    125deg,
+    #16122e,
+    #2a122e,
+    #394f47
+  );
   color: white;
   padding: 65px 7%;
   text-align: center;
@@ -114,9 +118,9 @@ nav a:hover {
   width: 155px;
   height: 155px;
   border-radius: 50%;
-  border: 5px solid white;
+  border: 5px solid var(--sky);
   object-fit: cover;
-  background: #dceeff;
+  background: #dce5df;
   margin-bottom: 18px;
   box-shadow: 0 8px 25px #0003;
 }
@@ -141,14 +145,14 @@ nav a:hover {
   padding: 7px 17px;
   border: 1px solid var(--sky);
   border-radius: 30px;
-  color: #d5f4ff;
+  color: #e3eee7;
 }
 
 .button {
   display: inline-block;
   margin: 18px 5px 0;
   padding: 11px 23px;
-  background: white;
+  background: var(--sky);
   color: var(--navy);
   text-decoration: none;
   font-weight: bold;
@@ -157,8 +161,9 @@ nav a:hover {
 }
 
 .button.primary {
-  background: #079de8;
+  background: var(--green);
   color: white;
+  border: 1px solid var(--sky);
 }
 
 .button:hover {
@@ -177,21 +182,23 @@ section {
   background: white;
   padding: 27px;
   margin: 22px 0;
-  border: 1px solid #e1edf7;
+  border: 1px solid #ded5e0;
   border-radius: 17px;
-  box-shadow: 0 5px 20px #102b4810;
+  box-shadow: 0 5px 20px #16122e10;
   scroll-margin-top: 85px;
   animation: appear .6s ease both;
 }
 
 section h2 {
-  color: #104a76;
+  color: var(--navy);
   font-size: 25px;
   margin-bottom: 15px;
+  border-bottom: 2px solid var(--sky);
+  padding-bottom: 7px;
 }
 
 section h3 {
-  color: #10375c;
+  color: var(--purple);
   margin-bottom: 8px;
 }
 
@@ -200,8 +207,8 @@ section p {
 }
 
 .card {
-  background: #f5faff;
-  border-left: 4px solid var(--blue);
+  background: #f4f1f5;
+  border-left: 4px solid var(--green);
   padding: 17px;
   margin-top: 15px;
   border-radius: 8px;
@@ -211,19 +218,14 @@ section p {
   margin-bottom: 0;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.grid section {
-  margin: 10px 0;
-}
-
 .dream {
   color: white;
-  background: linear-gradient(125deg, #071b35, #125a8d);
+  background: linear-gradient(
+    125deg,
+    #16122e,
+    #2a122e,
+    #394f47
+  );
   border: none;
 }
 
@@ -232,14 +234,14 @@ section p {
   color: white;
 }
 
-.dream .card {
-  color: var(--text);
+.dream h2 {
+  border-bottom-color: var(--sky);
 }
 
 .family-link {
   display: inline-block;
   margin-top: 10px;
-  background: var(--blue);
+  background: var(--green);
   color: white;
   text-decoration: none;
   padding: 10px 18px;
@@ -261,7 +263,7 @@ section p {
   overflow: hidden;
   border-radius: 12px;
   background: var(--pale);
-  border: 1px solid #d8eafa;
+  border: 1px solid #ded5e0;
 }
 
 .gallery-item img {
@@ -280,6 +282,7 @@ section p {
   padding: 9px 12px;
   font-weight: bold;
   margin: 0;
+  color: var(--purple);
 }
 
 .note {
@@ -331,11 +334,6 @@ footer .accent {
     padding: 45px 18px;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 5px;
-  }
-
   section {
     padding: 20px;
   }
@@ -351,7 +349,9 @@ footer .accent {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     scroll-behavior: auto !important;
     animation: none !important;
     transition: none !important;
@@ -377,8 +377,9 @@ footer .accent {
 </header>
 
 <div class="hero" id="home">
+
   <img class="profile"
-       src="Snapchat-53444081.jpg"
+       src="profile.jpg"
        alt="Nishanthan Suseekaran"
        onerror="this.style.display='none'">
 
@@ -393,6 +394,7 @@ footer .accent {
     <a class="button primary" href="#about">About Me</a>
     <a class="button" href="#dream">My Dream</a>
   </div>
+
 </div>
 
 <main>
@@ -440,10 +442,49 @@ footer .accent {
     </div>
 
     <div class="card">
+      <h3>Kannagipuram Vinayahar Vidiyalayam</h3>
+
+      <p><strong>Location:</strong> Mahiloor, Kaluwanchikudy</p>
+      <p><strong>Years:</strong> 2006–2014</p>
+
+      <p><strong>General Education Subjects:</strong></p>
+      <p>
+        Tamil, Mathematics, English, Science, History,
+        Art, Geography and Drama.
+      </p>
+
+      <p>
+        My school education helped me build knowledge,
+        develop my skills and create valuable memories.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>G.C.E. Ordinary Level Examination</h3>
+      <p>G.C.E. (O/L) Examination — December 2017</p>
+    </div>
+
+    <div class="card">
+      <h3>BT/PD/Paddiruppu Madya Maha Vidyalayam</h3>
+
+      <p><strong>Location:</strong> Kaluwanchikudy</p>
+      <p><strong>Years:</strong> 2019–2020</p>
+      <p><strong>Programme:</strong> Smart Class</p>
+
+      <p><strong>Subjects:</strong></p>
+      <p>
+        Electrical, Textile, Graphic Design and ICT.
+      </p>
+    </div>
+
+    <div class="card">
       <h3>My Teachers and School Memories</h3>
+
       <p>
         I am grateful to my teachers for their guidance,
-        patience and encouragement during my early education.
+        patience and encouragement during my education.
+        My school memories will always be an important
+        part of my journey.
       </p>
     </div>
   </section>
@@ -460,7 +501,7 @@ footer .accent {
       <p>
         My work experience has helped me learn
         responsibility, discipline and the importance
-        of working hard.
+        of teamwork and hard work.
       </p>
     </div>
   </section>
@@ -481,8 +522,8 @@ footer .accent {
     </p>
 
     <p>
-      I believe that learning and determination can help me
-      move closer to my dream.
+      I believe that learning, patience and determination
+      can help me move closer to my dream.
     </p>
   </section>
 
@@ -514,10 +555,12 @@ footer .accent {
     </p>
 
     <div class="gallery-grid">
+
       <div class="gallery-item">
         <img src="profile.jpg"
              alt="My profile photograph"
-             loading="lazy">
+             loading="lazy"
+             onerror="this.parentElement.style.display='none'">
         <p>My Profile</p>
       </div>
 
@@ -536,12 +579,12 @@ footer .accent {
              onerror="this.parentElement.style.display='none'">
         <p>My Aviation Dream</p>
       </div>
+
     </div>
 
     <p class="note">
-      To display your own pictures, upload the matching image
-      files to the same GitHub folder as index.html.
-      These sample filenames must match your actual filenames.
+      Upload your existing picture files to the same GitHub
+      folder as index.html. Keep the filenames exactly the same.
     </p>
   </section>
 
@@ -553,9 +596,7 @@ footer .accent {
       about my journey, my family and my dream of becoming a pilot.
     </p>
 
-    <p>
-      My Life &bull; My Journey &bull; My Dreams
-    </p>
+    <p>My Life &bull; My Journey &bull; My Dreams</p>
   </section>
 
 </main>
